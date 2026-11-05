@@ -1,0 +1,52 @@
+{
+  "runId": "20261103-notification2-01",
+  "case": "ANDROID-SMOKE",
+  "status": "PASS",
+  "platform": "Android",
+  "deviceModel": "Samsung SM_G991B",
+  "androidApi": 35,
+  "app": {
+    "package": "com.lumi.thing",
+    "version": "2.1.1",
+    "build": 23,
+    "variant": "release"
+  },
+  "environment": {
+    "selected": "production",
+    "runtimeBaseUrlIndependentlyRecorded": false
+  },
+  "networkAtRetest": {
+    "wifiValidated": true,
+    "wifiInternetCapability": true
+  },
+  "flow": {
+    "name": "notification inbox smoke",
+    "commandsTotal": 14,
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 24103,
+    "tabs": [
+      "Nhà của tôi",
+      "Lời mời",
+      "Lumi",
+      "Tính năng mới"
+    ]
+  },
+  "runner": {
+    "launchesDeepLinkAsColdStartIntent": true,
+    "forceStopsProcessOnly": true,
+    "clearsAppData": false
+  },
+  "evidence": [
+    "android-smoke-homes.png",
+    "android-smoke-invitations.png",
+    "android-smoke-lumi.png",
+    "android-smoke-news.png"
+  ],
+  "proofLimits": [
+    "UI navigation only",
+    "does not validate notification data correctness, FCM delivery, or token registration"
+  ],
+  "redaction": "Screenshots are cropped to app title and tab strip; notification content is excluded."
+}

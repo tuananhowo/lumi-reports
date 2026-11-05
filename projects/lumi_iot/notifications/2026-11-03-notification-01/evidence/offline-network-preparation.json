@@ -1,0 +1,13 @@
+{
+  "baseline": {
+    "wifi_on": "1",
+    "mobile_data": "1",
+    "airplane_mode_on": "0",
+    "stay_on_while_plugged_in": "3"
+  },
+  "offline_case_exit": 0,
+  "wifi_restored": true,
+  "mobile_data_restored": true,
+  "offline_wifi_setting": "0",
+  "offline_airplane_mode": "0"
+}

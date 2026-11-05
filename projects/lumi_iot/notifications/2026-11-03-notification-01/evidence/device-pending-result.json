@@ -1,0 +1,91 @@
+{
+  "sessionId": "1f637351-bb6b-4edb-8085-0391466d008e",
+  "flows": [
+    {
+      "flowName": "flow",
+      "flowPath": "build/notification-tests/20261103-notification-01/pending/flow.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "openLink(\"lumithing://lumithing.vn/dashboard/notification/1/01a1a0dd-6295-7715-8fd8-66dd28f94970\")",
+          "commandDisplay": "openLink(\"lumithing://lumithing.vn/dashboard/notification/1/01a1a0dd-6295-7715-8fd8-66dd28f94970\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 981,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "commandDisplay": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2136,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2168,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "assertVisible(text: \"Xem lời mời\")",
+          "commandDisplay": "assertVisible(text: \"Xem lời mời\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2259,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 404,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 7950,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "1f637351-bb6b-4edb-8085-0391466d008e",
+    "totalFlows": 1,
+    "totalCommands": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 7950
+  }
+}

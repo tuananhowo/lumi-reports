@@ -1,0 +1,21 @@
+{
+  "test_home_count": 6,
+  "pending_test_invites_after_cleanup": 0,
+  "membership_removals_after_check": [],
+  "invite_cancel_actions": [
+    {
+      "home_id": "9055",
+      "cancel_http": 200,
+      "cancel_success": true
+    },
+    {
+      "home_id": "9057",
+      "cancel_http": 200,
+      "cancel_success": true
+    }
+  ],
+  "home_list_http": 200,
+  "empty_test_homes_left_for_cleanup": 6,
+  "home_delete_skipped": "requires OTP per app flow; no OTP requested or sent",
+  "cleanup_success": true
+}

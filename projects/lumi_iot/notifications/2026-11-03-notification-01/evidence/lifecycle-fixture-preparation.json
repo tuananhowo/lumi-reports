@@ -1,0 +1,37 @@
+{
+  "phase": "fixture preparation",
+  "official_cases_executed": false,
+  "isolated_home_id": 9052,
+  "steps": [
+    {
+      "step": "accept_first_test_invite",
+      "http": 200,
+      "success": true,
+      "errorCode": null
+    },
+    {
+      "step": "remove_test_member_A",
+      "http": 200,
+      "success": true,
+      "errorCode": null
+    },
+    {
+      "step": "create_fresh_pending_invite",
+      "http": 200,
+      "success": true,
+      "errorCode": null
+    }
+  ],
+  "recipient_joined_only_test_home_verified": true,
+  "recipient_no_longer_member_verified": true,
+  "readback": {
+    "business_http": 200,
+    "home_inbox_http": 200,
+    "invite_inbox_http": 200,
+    "normal_test_notifications": 1,
+    "pending_test_notifications": 1,
+    "expired_test_notifications": 1,
+    "unread_test_notifications": 3,
+    "first_invitation_not_pending": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "http": 200,
+  "response_keys": [
+    "items",
+    "next_cursor",
+    "unread_count"
+  ],
+  "items_returned": 7,
+  "unread_count": 5,
+  "test_homes": [
+    {
+      "home_id": "9053",
+      "matched_items": 2,
+      "unread": 0,
+      "read": 2
+    },
+    {
+      "home_id": "9055",
+      "matched_items": 1,
+      "unread": 1,
+      "read": 0
+    }
+  ]
+}

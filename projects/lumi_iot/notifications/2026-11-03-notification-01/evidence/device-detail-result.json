@@ -1,0 +1,130 @@
+{
+  "sessionId": "a5da36ea-f631-4d29-9324-471b91a4a2e2",
+  "flows": [
+    {
+      "flowName": "flow",
+      "flowPath": "lumi_things/build/notification-tests/20261103-notification-01/detail-retry/flow.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "openLink(\"lumithing://lumithing.vn/dashboard/notification/0/01a1a0dd-5f4f-7686-a8f6-30b5836e2937\")",
+          "commandDisplay": "openLink(\"lumithing://lumithing.vn/dashboard/notification/0/01a1a0dd-5f4f-7686-a8f6-30b5836e2937\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 948,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2214,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2193,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "assertVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBao 1103170228\")",
+          "commandDisplay": "assertVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBao 1103170228\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2231,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 410,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "tapOn(text: \"Đồng ý\")",
+          "commandDisplay": "tapOn(text: \"Đồng ý\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2584,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 6,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2187,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 7,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 425,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 13195,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "a5da36ea-f631-4d29-9324-471b91a4a2e2",
+    "totalFlows": 1,
+    "totalCommands": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 13197
+  }
+}

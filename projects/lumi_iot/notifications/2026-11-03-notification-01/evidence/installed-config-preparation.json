@@ -1,0 +1,16 @@
+{
+  "package": "com.lumi.thing",
+  "version": "2.1.1",
+  "build": 23,
+  "device_model": "SM_G991B",
+  "serial": "[REDACTED]",
+  "notification_permission_granted": true,
+  "run_as_available": false,
+  "installed_production_api_url": "https://api.st-smart-home.lumi.vn/",
+  "installed_production_notification_url": "https://notification-legacy.thing.cluster.lumi.biz/",
+  "installed_env_matches_checkout": true,
+  "runtime_active_flavor_independently_observed": false,
+  "runtime_logging_available": false,
+  "stay_on_while_plugged_in_initial": 0,
+  "stay_on_while_plugged_in_restored": 0
+}

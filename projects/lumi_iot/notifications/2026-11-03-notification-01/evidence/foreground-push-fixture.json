@@ -1,0 +1,11 @@
+{
+  "fixture_home_id": "9056",
+  "unique_marker": "TestThongBaoNDEV_1103174238",
+  "app_foreground_at_send": true,
+  "authenticated_gateway_http": 200,
+  "inbox_marker_matches": 0,
+  "unread_matches": 0,
+  "system_notification_marker_occurrences": 1,
+  "app_foreground_after_send": true,
+  "verification_success": false
+}

@@ -1,0 +1,91 @@
+{
+  "sessionId": "2b453277-6e96-4e94-a861-af9a6a19604d",
+  "flows": [
+    {
+      "flowName": "read-all-offline-confirm",
+      "flowPath": "build/notification-tests/20261103-notification-01/read-all-offline-confirm.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "waitUntilVisible(text: \"Đánh dấu đã đọc\")",
+          "commandDisplay": "waitUntilVisible(text: \"Đánh dấu đã đọc\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2307,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Bạn có muốn đánh dấu đã đọc tất cả thông báo không?\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn có muốn đánh dấu đã đọc tất cả thông báo không?\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2185,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "tapOn(text: \"Đồng ý\")",
+          "commandDisplay": "tapOn(text: \"Đồng ý\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2546,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2219,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 403,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 9662,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "2b453277-6e96-4e94-a861-af9a6a19604d",
+    "totalFlows": 1,
+    "totalCommands": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 9734
+  }
+}

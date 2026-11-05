@@ -1,0 +1,21 @@
+{
+  "http": 200,
+  "items_returned": 7,
+  "next_cursor_present": false,
+  "unread_count": 0,
+  "all_returned_items_read": true,
+  "fixture_homes": [
+    {
+      "home_id": "9053",
+      "matched_items": 2,
+      "unread": 0,
+      "read": 2
+    },
+    {
+      "home_id": "9055",
+      "matched_items": 1,
+      "unread": 0,
+      "read": 1
+    }
+  ]
+}

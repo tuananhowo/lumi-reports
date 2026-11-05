@@ -1,0 +1,16 @@
+{
+  "A": {
+    "http": 200,
+    "success": true,
+    "home_count": 3,
+    "admin_home_count": 1,
+    "account_id_present": true
+  },
+  "B": {
+    "http": 200,
+    "success": true,
+    "home_count": 9,
+    "admin_home_count": 8,
+    "account_id_present": true
+  }
+}

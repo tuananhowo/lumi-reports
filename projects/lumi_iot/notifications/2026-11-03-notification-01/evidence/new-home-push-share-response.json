@@ -1,0 +1,12 @@
+{
+  "preexisting_invites_for_marker": 0,
+  "share_http": 200,
+  "success": true,
+  "status_code": 200,
+  "message": "",
+  "response_keys": [
+    "data",
+    "statusCode",
+    "success"
+  ]
+}

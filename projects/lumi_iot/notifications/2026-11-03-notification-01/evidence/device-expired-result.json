@@ -1,0 +1,104 @@
+{
+  "sessionId": "8276bf06-b91a-4caf-9bca-b8ef15cd4200",
+  "flows": [
+    {
+      "flowName": "flow-continue",
+      "flowPath": "build/notification-tests/20261103-notification-01/expired/flow-continue.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "commandDisplay": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2208,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2221,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "tapOn(text: \"Xem lời mời\")",
+          "commandDisplay": "tapOn(text: \"Xem lời mời\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2611,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "waitUntilVisible(text: \"Lời mời không còn hiệu lực\")",
+          "commandDisplay": "waitUntilVisible(text: \"Lời mời không còn hiệu lực\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2226,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "assertNotVisible(text: \"Xem lời mời\")",
+          "commandDisplay": "assertNotVisible(text: \"Xem lời mời\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 0,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 391,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 9659,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "8276bf06-b91a-4caf-9bca-b8ef15cd4200",
+    "totalFlows": 1,
+    "totalCommands": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 9661
+  }
+}

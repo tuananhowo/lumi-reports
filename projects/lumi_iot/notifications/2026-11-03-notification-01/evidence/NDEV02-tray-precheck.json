@@ -1,0 +1,23 @@
+{
+  "com_lumi_notification_records": 4,
+  "records_with_marker": 2,
+  "records_with_exact_body": 1,
+  "marker_record_details": [
+    {
+      "has_marker": true,
+      "has_exact_removal_body": false
+    },
+    {
+      "has_marker": false,
+      "has_exact_removal_body": false
+    },
+    {
+      "has_marker": true,
+      "has_exact_removal_body": true
+    },
+    {
+      "has_marker": false,
+      "has_exact_removal_body": false
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "sessionId": "3438a513-822b-49c7-9ee2-dc7a452aff5e",
+  "flows": [
+    {
+      "flowName": "reopen-inbox-retry",
+      "flowPath": "build/notification-tests/20261103-notification-01/reopen-inbox-retry.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "tapOn(text: \"Không cho phép\")",
+          "commandDisplay": "tapOn(text: \"Không cho phép\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2552,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Menu\")",
+          "commandDisplay": "waitUntilVisible(text: \"Menu\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2200,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "tapOn(text: \"Thông báo\")",
+          "commandDisplay": "tapOn(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2557,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "waitUntilVisible(text: \"Nhà của tôi\")",
+          "commandDisplay": "waitUntilVisible(text: \"Nhà của tôi\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2214,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 421,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 9946,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "3438a513-822b-49c7-9ee2-dc7a452aff5e",
+    "totalFlows": 1,
+    "totalCommands": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 9948
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "READY",
+  "issues": [],
+  "platform": "android",
+  "device": "[REDACTED]",
+  "scope": "tooling and Android installation only; auth/backend not checked"
+}

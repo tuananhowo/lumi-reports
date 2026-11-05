@@ -1,0 +1,14 @@
+{
+  "account_alias": "test-account-B",
+  "attempted_accounts": 1,
+  "login": {
+    "http": 200,
+    "success": true,
+    "errorCode": null
+  },
+  "profile": {
+    "http": 200,
+    "success": true,
+    "phone_matches_provided": true
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "sessionId": "9aa7de0b-2780-4f67-b7e8-f3183b6f38a3",
+  "flows": [
+    {
+      "flowName": "background-push",
+      "flowPath": "build/notification-tests/20261103-notification-01/background-push.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "openNotifications",
+          "commandDisplay": "openNotifications",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 49,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2995,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2198,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "tapOn(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "commandDisplay": "tapOn(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2872,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2332,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoNDEV_1103174238\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2322,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 6,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 544,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 13314,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "9aa7de0b-2780-4f67-b7e8-f3183b6f38a3",
+    "totalFlows": 1,
+    "totalCommands": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 13316
+  }
+}

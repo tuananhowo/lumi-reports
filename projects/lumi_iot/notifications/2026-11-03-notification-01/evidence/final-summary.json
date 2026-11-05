@@ -1,0 +1,306 @@
+{
+  "run_id": "20261103-notification-01",
+  "created_at_local": "2026-11-03 17:56 +0700",
+  "overall": "INCOMPLETE",
+  "counts": {
+    "total": 20,
+    "pass": 15,
+    "fail": 0,
+    "blocked": 2,
+    "not_run": 3
+  },
+  "environment": "production backend; local regression and local API simulation are reported separately",
+  "device": {
+    "model": "Samsung SM_G991B",
+    "os": "Android 15 / API 35",
+    "package": "com.lumi.thing",
+    "version": "2.1.1",
+    "build": 23,
+    "build_type": "release"
+  },
+  "source": {
+    "head": "1bec8e1e",
+    "working_tree": "dirty before and after test; no app source edited for this run"
+  },
+  "cases": [
+    {
+      "id": "NUI-01",
+      "title": "Chuyển bốn tab local — kế thừa từ Thông báo 2",
+      "status": "PASS",
+      "condition": "Kết quả PASS đã có trong lượt Thông báo 2.",
+      "execution": "Không chạy lại theo yêu cầu.",
+      "expected": "Mở được hộp thư và chuyển bốn tab.",
+      "observed": "PASS kế thừa; không tính là thực thi mới.",
+      "evidence": [
+        "inherited-NUI-01-events.jsonl"
+      ]
+    },
+    {
+      "id": "ANDROID-SMOKE",
+      "title": "Chuyển bốn tab trên Android — kế thừa",
+      "status": "PASS",
+      "condition": "Báo cáo lượt Thông báo 2 trên Samsung SM_G991B.",
+      "execution": "Không chạy lại theo yêu cầu.",
+      "expected": "Mở màn thông báo và chuyển đủ bốn tab.",
+      "observed": "PASS kế thừa, 14/14 bước trong 24.1 giây.",
+      "evidence": [
+        "inherited-android-smoke-summary.json"
+      ]
+    },
+    {
+      "id": "LOCAL",
+      "title": "Regression local, loại NUI-01",
+      "status": "PASS",
+      "condition": "Flutter 3.38.4/Dart 3.10.3; dependencies của checkout hiện tại.",
+      "execution": "6 tệp LOCAL_TESTS; Flutter --no-pub, lọc đúng test NUI-01 đã chạy trước đó.",
+      "expected": "Không còn test lỗi hoặc bị skip trong phần regression được chọn.",
+      "observed": "64/64 test hiển thị PASS; 8 sự kiện hidden cũng success.",
+      "evidence": [
+        "local-result-summary.json",
+        "local-events.jsonl"
+      ]
+    },
+    {
+      "id": "SIMULATION",
+      "title": "Notification Gateway simulation local",
+      "status": "PASS",
+      "condition": "Postman CLI 1.74.0 và simulation local.",
+      "execution": "Runner simulation; không gọi production và không chạm thiết bị.",
+      "expected": "Test Dart đi qua local API simulation thành công.",
+      "observed": "1/1 PASS; đây không phải push thật.",
+      "evidence": [
+        "simulation-summary.json"
+      ]
+    },
+    {
+      "id": "E2E-DETAIL",
+      "title": "Mở chi tiết thông báo thường",
+      "status": "PASS",
+      "condition": "Thông báo fixture thuộc A, body đối chiếu bằng API.",
+      "execution": "Lumi Tester Android; lần đầu bị màn hình khóa, retry cùng fixture.",
+      "expected": "Chi tiết đúng nội dung và đóng được.",
+      "observed": "Retry PASS 8/8 lệnh; lần đầu là lỗi điều kiện máy, không tính FAIL sản phẩm.",
+      "evidence": [
+        "device-detail-result.json"
+      ]
+    },
+    {
+      "id": "E2E-PENDING",
+      "title": "Lời mời còn hiệu lực",
+      "status": "PASS",
+      "condition": "Invite backend đang pending và notification ID được đối chiếu.",
+      "execution": "Mở notification, kiểm tra CTA; bấm CTA ở flow tiếp nối.",
+      "expected": "Nội dung đúng; chỉ sau “Xem lời mời” mới kiểm tra nghiệp vụ.",
+      "observed": "Nút “Xem lời mời” xuất hiện; trang invite tải được và hiện “Xác nhận”/“Từ chối”. Không chấp nhận lời mời.",
+      "evidence": [
+        "device-pending-result.json",
+        "device-pending-action-result.json"
+      ]
+    },
+    {
+      "id": "E2E-EXPIRED",
+      "title": "Lời mời đã hết hiệu lực",
+      "status": "PASS",
+      "condition": "Invite notification còn đọc được, nhưng business state không còn pending.",
+      "execution": "Mở chi tiết, bấm “Xem lời mời”; continuation dùng tiêu đề thực tế của UI.",
+      "expected": "Hiện hết hiệu lực và không còn CTA hành động.",
+      "observed": "PASS 6/6 lệnh; lần đầu locator tiêu đề chung sai, đã đối chiếu UI rồi chạy tiếp.",
+      "evidence": [
+        "device-expired-result.json"
+      ]
+    },
+    {
+      "id": "E2E-PUSH",
+      "title": "Mở notification từ khay hệ thống",
+      "status": "PASS",
+      "condition": "Push thật từ API nghiệp vụ tới máy Android; selector body có marker duy nhất.",
+      "execution": "Đưa app xuống nền, mở khay, bấm push và đối chiếu popup.",
+      "expected": "Push mở đúng nội dung trong app.",
+      "observed": "PASS qua flow NDEV-02: 7/7 lệnh, body khớp; không dùng kết quả này để suy ra âm thanh hoặc iOS.",
+      "evidence": [
+        "NDEV02-background-send.json",
+        "NDEV02-tray-precheck.json",
+        "device-background-push-result.json"
+      ]
+    },
+    {
+      "id": "NDEV-01",
+      "title": "Nhận push khi app đang mở",
+      "status": "PASS",
+      "condition": "App A mở ở hộp thư; API nghiệp vụ tạo invite mới với marker duy nhất.",
+      "execution": "Push tới đúng một lần trên Android; đợi inbox Gateway và UI refresh.",
+      "expected": "Title/body đúng, xuất hiện một lần và inbox cập nhật.",
+      "observed": "Lượt tự động 2026-11-03: system notification có một record, nhưng Gateway/UI không hiện marker và exact-text wait timeout. Recheck thủ công ngày 2026-11-04: người dùng xác nhận thấy thông báo trong hộp thư app; cập nhật trạng thái mới nhất PASS. Chưa có ảnh/mốc giờ/marker cụ thể; âm thanh chưa đo.",
+      "evidence": [
+        "foreground-push-fixture.json",
+        "foreground-push-legacy-readback.json",
+        "device-foreground-inbox-result.json",
+        "manual-recheck-20261104.md"
+      ]
+    },
+    {
+      "id": "NDEV-02",
+      "title": "Push tới khi app ở nền",
+      "status": "PASS",
+      "condition": "App được đưa về nền bằng Home; backend API tạo sự kiện removal test.",
+      "execution": "Xác minh exact body chỉ có một notification record, bấm từ khay.",
+      "expected": "Thông báo tới máy và mở đúng nội dung.",
+      "observed": "PASS; 7/7 lệnh, app mở đúng body.",
+      "evidence": [
+        "NDEV02-background-send.json",
+        "NDEV02-tray-precheck.json",
+        "device-background-push-result.json"
+      ]
+    },
+    {
+      "id": "NDEV-03",
+      "title": "Push sau khi đóng app bình thường",
+      "status": "PASS",
+      "condition": "Vuốt task khỏi Recents; app task và process đều vắng mặt trước khi gửi.",
+      "execution": "API tạo invite mới khi app đã đóng; mở push trong khay. Không dùng force-stop.",
+      "expected": "Mở đúng nội dung khi app được khởi chạy từ push.",
+      "observed": "PASS; body đúng và app mở detail. FCM khởi tạo process nền trước khi tap, nên không khẳng định process còn lạnh tại thời điểm tap.",
+      "evidence": [
+        "NDEV03-background-send.json",
+        "NDEV03-tray-precheck.json",
+        "NDEV03-normal-close.json",
+        "device-coldstart-push-result.json"
+      ],
+      "image": "NDEV03-push-detail.png"
+    },
+    {
+      "id": "NDEV-04",
+      "title": "Đọc một mục/đọc tất cả, đóng mở lại",
+      "status": "PASS",
+      "condition": "Server có mục unread; API readback xác thực.",
+      "execution": "Đọc một notification ở case detail; đọc tất cả online; force-stop/relaunch app rồi vào lại inbox.",
+      "expected": "Trạng thái bền sau khi app mở lại và unread count đúng.",
+      "observed": "7/7 mục server đã đọc; unread_count=0; inbox mở lại thành công. Read-all đã bao gồm các notification cũ sẵn có của tài khoản A.",
+      "evidence": [
+        "read-all-online-readback.json",
+        "device-readall-online-result.json",
+        "device-reopen-inbox-result.json"
+      ]
+    },
+    {
+      "id": "NDEV-05",
+      "title": "Đọc một mục khi offline rồi đồng bộ",
+      "status": "PASS",
+      "condition": "Fixture unread riêng; Wi-Fi và mobile data có thể khôi phục.",
+      "execution": "Mất mạng, mở/đọc item, nối mạng và đọc lại trạng thái server.",
+      "expected": "Read được đồng bộ và không trở lại unread.",
+      "observed": "Flow offline PASS; API readback xác nhận fixture đã đọc sau khi reconnect.",
+      "evidence": [
+        "offline-readback.json",
+        "offline-network-preparation.json",
+        "device-offline-single-result.json"
+      ]
+    },
+    {
+      "id": "NDEV-06",
+      "title": "Read-all offline và push mới đến sau",
+      "status": "PASS",
+      "condition": "Thiết bị mất internet đã xác minh; API nghiệp vụ tạo notification mới khi offline.",
+      "execution": "Xác nhận read-all offline, tạo fixture mới, nối mạng, kiểm tra server, rồi đọc tất cả online.",
+      "expected": "Read-all offline không tự áp dụng lên item đến sau; item chưa gửi được cần thao tác online.",
+      "observed": "Trước read-all online, server còn 5 unread và fixture mới vẫn unread. Sau thao tác online unread_count=0.",
+      "evidence": [
+        "read-all-offline-sequence.json",
+        "read-all-pre-online.json",
+        "read-all-online-readback.json",
+        "device-offline-readall-result.json"
+      ]
+    },
+    {
+      "id": "NDEV-07",
+      "title": "App toggle và quyền OS",
+      "status": "NOT RUN",
+      "condition": "Cần push mới riêng sau từng lần đổi app toggle/OS permission.",
+      "execution": "Không đổi setting trong đợt này.",
+      "expected": "Push chỉ được nhận theo cấu hình mới và endpoint đăng ký cập nhật đúng.",
+      "observed": "Chưa chạy; không suy ra từ push đã có trước khi đổi trạng thái.",
+      "evidence": [
+        "unrun-case-reasons.json"
+      ]
+    },
+    {
+      "id": "NDEV-08",
+      "title": "Đổi Việt/Anh và push theo locale",
+      "status": "NOT RUN",
+      "condition": "Thiết bị đang ở tiếng Việt; chưa có fixture English đã xác minh.",
+      "execution": "Không đổi locale hoặc gửi push English trong đợt này.",
+      "expected": "UI và nội dung push khớp contract locale backend.",
+      "observed": "Chưa chạy.",
+      "evidence": [
+        "unrun-case-reasons.json"
+      ]
+    },
+    {
+      "id": "NDEV-09",
+      "title": "Đổi tài khoản A/B và cô lập dữ liệu",
+      "status": "NOT RUN",
+      "condition": "A/B được xác minh qua API; app thiết bị vẫn đăng nhập A.",
+      "execution": "Không logout/login hoặc chuyển phiên trên thiết bị.",
+      "expected": "B không thấy inbox/badge/payload của A.",
+      "observed": "Chưa chạy; không có bằng chứng cross-session.",
+      "evidence": [
+        "unrun-case-reasons.json"
+      ]
+    },
+    {
+      "id": "NDEV-10",
+      "title": "Push mở mục ở trang sau",
+      "status": "BLOCKED",
+      "condition": "Gateway authenticated inbox trả 7 mục, không có next_cursor.",
+      "execution": "Không tạo thêm dữ liệu số lượng lớn chỉ để ép cursor.",
+      "expected": "Mục sau trang đầu mở đúng, cursor không lặp/mất mục.",
+      "observed": "Thiếu hơn 20 mục để tạo trang sau; không thể chạy acceptance này với fixture hiện có.",
+      "evidence": [
+        "authenticated-preparation.json",
+        "read-all-online-readback.json",
+        "unrun-case-reasons.json"
+      ]
+    },
+    {
+      "id": "NDEV-11",
+      "title": "Invite pending và hết hiệu lực",
+      "status": "PASS",
+      "condition": "Hai fixture business tách riêng: pending và đã cancel/expired.",
+      "execution": "Mở notification; với pending bấm “Xem lời mời”; với expired kiểm tra thông báo hết hiệu lực.",
+      "expected": "Pending mở lời mời; invite hết hiệu lực không còn action.",
+      "observed": "Cả hai nhánh đúng. Invite test còn pending đã được cancel trong cleanup.",
+      "evidence": [
+        "device-pending-result.json",
+        "device-pending-action-result.json",
+        "device-expired-result.json",
+        "cleanup.json"
+      ]
+    },
+    {
+      "id": "NDEV-12",
+      "title": "Nâng cấp từ OneSignal cũ",
+      "status": "BLOCKED",
+      "condition": "Cần APK tiền migration cùng app ID/chữ ký và installation dữ liệu cũ.",
+      "execution": "Không cài đè hoặc downgrade vì không có artifact phù hợp.",
+      "expected": "Giữ dữ liệu cũ và nhận đúng một push sau migration.",
+      "observed": "BLOCKED trước chạy; không có APK/installation cũ để xác minh.",
+      "evidence": [
+        "unrun-case-reasons.json",
+        "verification.md"
+      ]
+    }
+  ],
+  "cleanup": {
+    "wifi_on": true,
+    "mobile_data_on": true,
+    "airplane_mode": false,
+    "stay_on_while_plugged_in": 0,
+    "post_notifications_granted": true,
+    "test_homes_empty": 6,
+    "pending_test_invites": 0,
+    "test_members_remaining": 0,
+    "active_test_push_notifications_left_in_shade": 2,
+    "camera_permission": "denied after dismissing unrelated permission prompt; initial camera permission state was not captured",
+    "read_all_side_effect": "all 7 returned inbox items were marked read, including notifications predating the test"
+  }
+}

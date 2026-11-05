@@ -1,0 +1,117 @@
+{
+  "sessionId": "d40249d5-4f29-47e2-b4ae-fd2520349214",
+  "flows": [
+    {
+      "flowName": "pending-action",
+      "flowPath": "build/notification-tests/20261103-notification-01/pending-action.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "openLink(\"lumithing://lumithing.vn/dashboard/notification/1/01a1a0dd-6295-7715-8fd8-66dd28f94970\")",
+          "commandDisplay": "openLink(\"lumithing://lumithing.vn/dashboard/notification/1/01a1a0dd-6295-7715-8fd8-66dd28f94970\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 86,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "commandDisplay": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2112,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBao 1103170228\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2263,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "tapOn(text: \"Xem lời mời\")",
+          "commandDisplay": "tapOn(text: \"Xem lời mời\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2593,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "waitUntilVisible(text: \"Xác nhận\")",
+          "commandDisplay": "waitUntilVisible(text: \"Xác nhận\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2245,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "waitUntilVisible(text: \"Từ chối\")",
+          "commandDisplay": "waitUntilVisible(text: \"Từ chối\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2194,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 6,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 416,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 11911,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "d40249d5-4f29-47e2-b4ae-fd2520349214",
+    "totalFlows": 1,
+    "totalCommands": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 11913
+  }
+}

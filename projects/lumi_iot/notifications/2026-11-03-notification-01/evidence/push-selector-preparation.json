@@ -1,0 +1,7 @@
+{
+  "flow_validation_exit": 0,
+  "unique_fixture_marker_present_in_message": true,
+  "selector": "test-home marker instead of shared generic notification title",
+  "device_launched": false,
+  "case_executed": false
+}

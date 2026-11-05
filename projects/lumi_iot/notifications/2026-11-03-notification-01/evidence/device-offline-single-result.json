@@ -1,0 +1,130 @@
+{
+  "sessionId": "f190acd2-cf3c-45d3-a064-b35ef9ab3c1a",
+  "flows": [
+    {
+      "flowName": "offline-action",
+      "flowPath": "build/notification-tests/20261103-notification-01/offline-action.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2261,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "tapOn(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "commandDisplay": "tapOn(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2618,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2203,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "assertVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "commandDisplay": "assertVisible(text: \"Bạn đã bị xóa ra khỏi nhà TestThongBaoOffline 1103172653\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2215,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 406,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "tapOn(text: \"Đồng ý\")",
+          "commandDisplay": "tapOn(text: \"Đồng ý\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2561,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 6,
+          "commandName": "waitUntilVisible(text: \"Thông báo\")",
+          "commandDisplay": "waitUntilVisible(text: \"Thông báo\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2228,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 7,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 427,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 14924,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "f190acd2-cf3c-45d3-a064-b35ef9ab3c1a",
+    "totalFlows": 1,
+    "totalCommands": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 14936
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "phase": "fixture preparation",
+  "official_push_case_executed": false,
+  "correlation_marker": "TestThongBao 1103170228",
+  "package_records": [
+    {
+      "package": "com.lumi.thing",
+      "fixture_marker_in_record": true,
+      "has_notification_title": true,
+      "has_notification_text": true,
+      "before_historical_notifications": true,
+      "header_has_fcm": true,
+      "record_length": 5365,
+      "marker_offset": 1898
+    },
+    {
+      "package": "com.lumi.thing",
+      "fixture_marker_in_record": true,
+      "has_notification_title": true,
+      "has_notification_text": true,
+      "before_historical_notifications": true,
+      "header_has_fcm": true,
+      "record_length": 5341,
+      "marker_offset": 1886
+    },
+    {
+      "package": "com.lumi.thing",
+      "fixture_marker_in_record": true,
+      "has_notification_title": true,
+      "has_notification_text": true,
+      "before_historical_notifications": true,
+      "header_has_fcm": true,
+      "record_length": 5365,
+      "marker_offset": 1898
+    }
+  ],
+  "matching_notification_records": 3,
+  "raw_dump_saved": false,
+  "record_search_is_read_only": true,
+  "does_not_establish_foreground_background_cold_start_delivery": true
+}

@@ -1,0 +1,8 @@
+{
+  "project": "lumi-things",
+  "cli_account_present": true,
+  "iam_permission_check_http": 200,
+  "cloudmessaging.messages.create": true,
+  "push_sent": false,
+  "installation_token_verified": false
+}

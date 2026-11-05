@@ -1,0 +1,34 @@
+{
+  "phase": "fixture preparation",
+  "official_cases_executed": false,
+  "sender": "test-account-B",
+  "recipient": "test-account-A",
+  "api_steps": [
+    {
+      "step": "create_isolated_home_B",
+      "http": 200,
+      "success": true,
+      "errorCode": null
+    },
+    {
+      "step": "invite_A_from_isolated_home_B",
+      "http": 200,
+      "success": true,
+      "errorCode": null
+    }
+  ],
+  "readback": {
+    "business_invites_http": 200,
+    "business_success": true,
+    "inbox_http": 200,
+    "correlated_business_invites": 1,
+    "pending_invites": 1,
+    "correlated_inbox_items": 1,
+    "unread_items": 1,
+    "business_inbox_action_id_match": true
+  },
+  "isolated_home_created": true,
+  "fixture_home_id": 9052,
+  "fixture_home_name": "TestThongBao 1103170228",
+  "cleanup": "Keep isolated home/invitation for this run; revoke test invitation/member afterward. Deleting home requires OTP according to source."
+}

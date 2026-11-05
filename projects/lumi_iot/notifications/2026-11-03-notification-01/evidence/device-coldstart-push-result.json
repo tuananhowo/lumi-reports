@@ -1,0 +1,117 @@
+{
+  "sessionId": "1600d959-29b7-4321-85bc-548c508f7884",
+  "flows": [
+    {
+      "flowName": "coldstart-push",
+      "flowPath": "build/notification-tests/20261103-notification-01/coldstart-push.yaml",
+      "status": {
+        "type": "passed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "openNotifications",
+          "commandDisplay": "openNotifications",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 76,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2864,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 2,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2044,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 3,
+          "commandName": "tapOn(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "commandDisplay": "tapOn(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2914,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 4,
+          "commandName": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "commandDisplay": "waitUntilVisible(text: \"Lời mời thêm vào nhà\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2530,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 5,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV03_1103174721\")",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 2156,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        },
+        {
+          "index": 6,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "passed"
+          },
+          "durationMs": 445,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 13032,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "1600d959-29b7-4321-85bc-548c508f7884",
+    "totalFlows": 1,
+    "totalCommands": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "totalDurationMs": 13034
+  }
+}

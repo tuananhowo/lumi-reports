@@ -1,0 +1,13 @@
+{
+  "legacy_http": 200,
+  "response_keys": [
+    "data",
+    "message",
+    "statusCode",
+    "success"
+  ],
+  "legacy_items_returned": 0,
+  "marker_matches": 0,
+  "unread_marker_matches": 0,
+  "total_elements": null
+}

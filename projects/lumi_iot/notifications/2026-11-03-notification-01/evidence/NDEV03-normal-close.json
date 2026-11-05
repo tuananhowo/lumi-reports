@@ -1,0 +1,20 @@
+{
+  "close_method": "Android Recents swipe; no force-stop",
+  "task_and_process_before_push": {
+    "app_recent_task_count": 0,
+    "app_process_absent": true,
+    "launcher_foreground": true
+  },
+  "push_generation": {
+    "http": 200,
+    "success": true,
+    "pending_invite_readback": true
+  },
+  "before_tap": {
+    "unique_system_notification_records": 1,
+    "exact_invite_body_records": 1,
+    "app_process_alive_after_fcm": true
+  },
+  "tap_result": "7/7 Lumi Tester commands passed; exact invite detail opened",
+  "interpretation": "App had no task and no process before send. FCM started the process before the tap, so this proves launch from a closed task via push; a process-cold state at tap was not observed."
+}

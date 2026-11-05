@@ -1,0 +1,19 @@
+{
+  "baseline": {
+    "wifi_on": "1",
+    "mobile_data": "1",
+    "airplane_mode_on": "0",
+    "stay_on_while_plugged_in": "3"
+  },
+  "network_disabled": true,
+  "dialog_confirmed_offline": true,
+  "new_notification_created_while_offline": true,
+  "network_restored": true,
+  "case_exit": 0,
+  "app_bar_button_visible": true,
+  "wifi_setting_offline": "0",
+  "mobile_data_setting_offline": "0",
+  "validated_internet_networks_offline": 0,
+  "fixture_create_exit": 0,
+  "stay_on_while_plugged_in_after": "3"
+}

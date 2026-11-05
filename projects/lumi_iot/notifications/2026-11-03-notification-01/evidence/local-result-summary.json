@@ -1,0 +1,11 @@
+{
+  "reporter": "Flutter JSON file reporter",
+  "name_filter": "^(?!.*NUI-01 switches all four tabs and renders their own items)",
+  "visible_test_events": 64,
+  "visible_passed": 64,
+  "visible_failed": 0,
+  "visible_skipped": 0,
+  "hidden_test_events": 8,
+  "hidden_events_all_success": true,
+  "nui_01_excluded": true
+}

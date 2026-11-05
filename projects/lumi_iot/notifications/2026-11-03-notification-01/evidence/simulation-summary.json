@@ -1,0 +1,19 @@
+{
+  "command": [
+    "fvm",
+    "flutter",
+    "test",
+    "--no-pub",
+    "--reporter",
+    "expanded",
+    "--file-reporter",
+    "json:lumi_things/build/notification-tests/20261103-notification-01/simulation/events.jsonl",
+    "--dart-define=NOTIFICATION_SIMULATION_URL=http://127.0.0.1:53577",
+    "test/data/repositories/notification_inbox_simulation_test.dart"
+  ],
+  "exit_code": 0,
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "evidence": "local Flutter; device delivery not exercised"
+}

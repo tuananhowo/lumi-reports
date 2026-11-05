@@ -1,0 +1,45 @@
+{
+  "fixture_home_id": 9053,
+  "cycle_count": 2,
+  "completed": true,
+  "steps": [
+    {
+      "op": "create_home",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "invite_1",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "accept_1",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "remove_A_1",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "invite_2",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "accept_2",
+      "http": 200,
+      "success": true
+    },
+    {
+      "op": "remove_A_2",
+      "http": 200,
+      "success": true
+    }
+  ],
+  "all_api_steps_success": true,
+  "official_acceptance_cases_executed": false,
+  "cleanup": "Keep this isolated home for read/offline cases; remove test member and invite after suite; deleting house may require OTP."
+}

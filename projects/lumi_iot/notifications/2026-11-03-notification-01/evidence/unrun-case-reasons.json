@@ -1,0 +1,22 @@
+{
+  "NDEV07": {
+    "status": "NOT RUN",
+    "reason": "App/OS notification settings were not changed; each changed state requires a fresh, independently generated push. Existing test homes had already recorded their recipient share, and no additional setting-specific fixture was created."
+  },
+  "NDEV08": {
+    "status": "NOT RUN",
+    "reason": "Device locale remained Vietnamese; no English push fixture or confirmed locale-specific backend contract was exercised."
+  },
+  "NDEV09": {
+    "status": "NOT RUN",
+    "reason": "The app session was not switched from account A to B; no cross-account inbox/push-isolation assertion was made."
+  },
+  "NDEV10": {
+    "status": "BLOCKED",
+    "reason": "Authenticated inbox had 7 items and no next_cursor, below the >20-item fixture needed to test a notification beyond the first page."
+  },
+  "NDEV12": {
+    "status": "BLOCKED",
+    "reason": "No pre-migration OneSignal installation/APK with matching app id and signing certificate was available; no downgrade or replacement install was attempted."
+  }
+}

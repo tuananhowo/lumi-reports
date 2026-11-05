@@ -1,0 +1,37 @@
+{
+  "http": 200,
+  "success": true,
+  "business_invite_count": 0,
+  "fixtures": [
+    {
+      "tab": "home",
+      "category": "home",
+      "is_legacy": false,
+      "is_unread": true,
+      "business_action_present": false,
+      "pending_business_match": false,
+      "body_nonempty": true,
+      "title_nonempty": true
+    },
+    {
+      "tab": "home",
+      "category": "home",
+      "is_legacy": false,
+      "is_unread": false,
+      "business_action_present": false,
+      "pending_business_match": false,
+      "body_nonempty": true,
+      "title_nonempty": true
+    },
+    {
+      "tab": "invites",
+      "category": "home_invite",
+      "is_legacy": false,
+      "is_unread": false,
+      "business_action_present": true,
+      "pending_business_match": false,
+      "body_nonempty": true,
+      "title_nonempty": true
+    }
+  ]
+}

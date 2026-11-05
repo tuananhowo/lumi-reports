@@ -1,0 +1,77 @@
+{
+  "login": {
+    "http": 200,
+    "success": true,
+    "errorCode": null
+  },
+  "account": {
+    "http": 200,
+    "success": true,
+    "phone_matches_provided": true
+  },
+  "home": {
+    "http": 200,
+    "top_level_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "data_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "item_count": 2,
+    "has_cursor": false,
+    "unread_count": 1
+  },
+  "invites": {
+    "http": 200,
+    "top_level_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "data_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "item_count": 1,
+    "has_cursor": false,
+    "unread_count": 1
+  },
+  "lumi": {
+    "http": 200,
+    "top_level_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "data_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "item_count": 0,
+    "has_cursor": false,
+    "unread_count": 1
+  },
+  "new": {
+    "http": 200,
+    "top_level_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "data_keys": [
+      "items",
+      "next_cursor",
+      "unread_count"
+    ],
+    "item_count": 0,
+    "has_cursor": false,
+    "unread_count": 1
+  },
+  "private_session_saved_outside_repo": true
+}

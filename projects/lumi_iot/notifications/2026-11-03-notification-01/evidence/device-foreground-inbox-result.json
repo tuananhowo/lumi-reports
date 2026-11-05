@@ -1,0 +1,54 @@
+{
+  "sessionId": "bb6a779f-dd11-45a6-ac70-478bc6fda22d",
+  "flows": [
+    {
+      "flowName": "foreground-inbox-refresh",
+      "flowPath": "build/notification-tests/20261103-notification-01/foreground-inbox-refresh.yaml",
+      "status": {
+        "type": "failed"
+      },
+      "commands": [
+        {
+          "index": 0,
+          "commandName": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV_1103174238\")",
+          "commandDisplay": "waitUntilVisible(text: \"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV_1103174238\")",
+          "status": {
+            "type": "failed",
+            "error": "Element not visible within 10000ms: Text(\"Bạn đã được chia sẻ quyền sử dụng nhà TestThongBaoNDEV_1103174238\", 0, false)"
+          },
+          "durationMs": 14512,
+          "screenshotPath": "build/notification-tests/20261103-notification-01/foreground-inbox-refresh/[REDACTED]/fail_foreground-inbox-refresh_174508_cmd0_39d1f2da.png",
+          "uiHierarchyPath": "build/notification-tests/20261103-notification-01/foreground-inbox-refresh/[REDACTED]/fail_foreground-inbox-refresh_174508_cmd0_39d1f2da.xml",
+          "logPath": "build/notification-tests/20261103-notification-01/foreground-inbox-refresh/[REDACTED]/fail_foreground-inbox-refresh_174508_cmd0_39d1f2da.log",
+          "retryCount": 0
+        },
+        {
+          "index": 1,
+          "commandName": "screenshot",
+          "commandDisplay": "screenshot",
+          "status": {
+            "type": "skipped",
+            "reason": "Previous command failed"
+          },
+          "durationMs": null,
+          "screenshotPath": null,
+          "uiHierarchyPath": null,
+          "logPath": null,
+          "retryCount": 0
+        }
+      ],
+      "totalDurationMs": 14512,
+      "error": null,
+      "videoPath": null
+    }
+  ],
+  "summary": {
+    "sessionId": "bb6a779f-dd11-45a6-ac70-478bc6fda22d",
+    "totalFlows": 1,
+    "totalCommands": 2,
+    "passed": 0,
+    "failed": 1,
+    "skipped": 1,
+    "totalDurationMs": 14513
+  }
+}
