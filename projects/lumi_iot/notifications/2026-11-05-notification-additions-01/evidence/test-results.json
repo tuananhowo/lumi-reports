@@ -1,0 +1,78 @@
+{
+  "run_id": "20261105-notification-additions-01",
+  "observed_at": "2026-11-05T12:33:00+07:00",
+  "summary": {
+    "total": 7,
+    "pass": 4,
+    "fail": 0,
+    "blocked": 3,
+    "not_run": 0,
+    "overall": "INCOMPLETE"
+  },
+  "cases": [
+    {
+      "id": "HARN-01",
+      "status": "PASS",
+      "result": "13/13 Python unittest cases passed after fixing foreground openNotifications action to serialize as a string.",
+      "raw_log": "../logs/python-harness.log"
+    },
+    {
+      "id": "NUI-11",
+      "status": "PASS",
+      "result": "The notification UI regression file passed 20/20, including the accepted-by-another-account invitation fixture with status=1.",
+      "raw_log": "../logs/flutter-widget.log"
+    },
+    {
+      "id": "PUSH-ROUTE",
+      "status": "PASS",
+      "result": "5/5 tests passed; home, home_invite, lumi_news, and promotion route to tabs 0, 1, 2, and 3.",
+      "raw_log": "../logs/push-navigation.log"
+    },
+    {
+      "id": "NDEV-13",
+      "status": "PASS",
+      "result": "1/1 Flutter/Postman local simulation test passed. Each tab received a simulated GET 503 then 200 retry; prior IDs remained and were unique.",
+      "raw_log": "../logs/postman-simulation.jsonl"
+    },
+    {
+      "id": "NDEV-01",
+      "status": "BLOCKED",
+      "result": "Android foreground delivery was not run because no fresh sender/fixture was verified that creates both a correlated inbox row and FCM push. Foreground flow YAML validated; validation is not E2E."
+    },
+    {
+      "id": "NDEV-02",
+      "status": "BLOCKED",
+      "result": "Android background delivery was not run because no fresh sender/fixture was verified that creates both a correlated inbox row and FCM push. Background flow YAML validated; validation is not E2E."
+    },
+    {
+      "id": "NDEV-03",
+      "status": "BLOCKED",
+      "result": "Android normal-close delivery was not run because no fresh sender/fixture was verified that creates both a correlated inbox row and FCM push. Closed-push flow YAML validated; validation is not E2E."
+    }
+  ],
+  "flow_validation": {
+    "foreground": "PASS; no device execution",
+    "push": "PASS; no device execution",
+    "closed-push": "PASS; no device execution"
+  },
+  "production_device_preflight": {
+    "device": "Samsung SM_G991B, Android 15/API 35",
+    "app": "com.lumi.thing 2.2.0 (24); matches repository; no reinstall",
+    "session": "account A authenticated; production inbox list loaded",
+    "notification_permission": "granted",
+    "unread_badge_before_tests": 4,
+    "read_or_read_all_actions": false
+  },
+  "secret_material_saved": false,
+  "limitations": [
+    "Postman simulation is a local stand-in and does not establish live gateway behavior or real offline network behavior.",
+    "No fresh FCM push was sent or received in this run.",
+    "NDEV-01/02/03 remain BLOCKED; app device state and previous unread inbox entries were not consumed."
+  ],
+  "final_state": {
+    "report": "report.html",
+    "device_state": "App left without consuming existing inbox items; no reinstall performed.",
+    "unread_badge_baseline_preserved": 4,
+    "cleanup": "No old fixture/house deletion; those records require OTP."
+  }
+}

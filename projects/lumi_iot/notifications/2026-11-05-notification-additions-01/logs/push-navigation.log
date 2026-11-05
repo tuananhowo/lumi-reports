@@ -1,0 +1,7 @@
+00:00 +0: loading lumi_things/test/views/notification/push_navigation_test.dart
+00:00 +0: push category home opens tab 0 without an inbox lookup
+00:00 +1: push category home_invite opens tab 1 without an inbox lookup
+00:00 +2: push category lumi_news opens tab 2 without an inbox lookup
+00:00 +3: push category promotion opens tab 3 without an inbox lookup
+00:00 +4: signed-out push does not navigate
+00:00 +5: All tests passed!

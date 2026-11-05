@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Báo cáo kiểm thử — Thông báo 2.2.0</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #173630;
+      --muted: #667b74;
+      --line: #dbe5e1;
+      --canvas: #eef3f1;
+      --paper: #fffefa;
+      --brand: #087d58;
+      --dark: #123d35;
+      --pass: #087a4b;
+      --warn: #a66a00;
+      --fail: #ad372f;
+      --blocked: #59636b;
+      --shadow: 0 16px 42px rgba(18, 61, 53, .10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font: 14px/1.55 Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .page { max-width: 1180px; margin: auto; padding: 26px; }
+    .report {
+      overflow: hidden;
+      border: 1px solid #d3dfda;
+      border-radius: 20px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      gap: 22px;
+      overflow: auto;
+      padding: 13px 28px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 254, 250, .96);
+    }
+    .nav a { color: var(--muted); font-size: 12px; font-weight: 750; text-decoration: none; white-space: nowrap; }
+    .nav a:hover { color: var(--brand); }
+    .hero {
+      padding: 34px 30px 27px;
+      background: radial-gradient(circle at 78% 18%, rgba(215, 241, 103, .34), transparent 24%),
+        linear-gradient(135deg, #f8fcf9, #edf7f1);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 190px; gap: 26px; align-items: center; }
+    .eyebrow { margin: 0 0 7px; color: var(--brand); font-size: 11px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(24px, 4vw, 34px); letter-spacing: -.04em; line-height: 1.15; }
+    .lead { max-width: 730px; margin: 10px 0 0; color: var(--muted); }
+    .template-note { display: inline-block; margin-top: 15px; padding: 5px 9px; border: 1px solid #e8d49e; border-radius: 999px; color: #785500; background: #fff9e8; font-size: 11px; font-weight: 750; }
+    .outcome {
+      display: grid;
+      width: 164px;
+      height: 164px;
+      place-items: center;
+      margin: auto;
+      border: 13px solid #e2ebe6;
+      border-radius: 50%;
+      background: var(--paper);
+      text-align: center;
+    }
+    .outcome span { display: block; color: var(--muted); font-size: 10px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+    .outcome strong { display: block; max-width: 120px; margin-top: 7px; font-size: 17px; line-height: 1.15; }
+    .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 24px; overflow: hidden; border: 1px solid #d3e1da; border-radius: 11px; background: #d3e1da; }
+    .meta { min-height: 59px; padding: 9px 11px; background: rgba(255, 255, 255, .8); }
+    .meta span { display: block; color: var(--muted); font-size: 10px; }
+    .meta b { display: block; margin-top: 2px; font-size: 12px; overflow-wrap: anywhere; }
+    .summary { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .metric { padding: 19px 22px; border-right: 1px solid var(--line); }
+    .metric:last-child { border: 0; }
+    .metric span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .metric strong { display: block; margin-top: 5px; font-size: 27px; letter-spacing: -.05em; }
+    .metric.pass strong { color: var(--pass); }
+    .metric.fail strong { color: var(--fail); }
+    .metric.blocked strong { color: var(--blocked); }
+    .metric.not-run strong { color: var(--warn); }
+    .section { padding: 27px 30px; border-top: 7px solid var(--canvas); }
+    .section-head { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+    .section-number { display: grid; flex: 0 0 30px; width: 30px; height: 30px; place-items: center; border-radius: 8px; color: white; background: var(--dark); font-weight: 850; }
+    h2 { margin: 0; font-size: 20px; letter-spacing: -.03em; }
+    .section-intro { margin: 3px 0 0; color: var(--muted); }
+    .finding-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .finding { display: flex; gap: 10px; align-items: flex-start; padding: 13px; border: 1px solid var(--line); border-radius: 10px; background: #fbfdfc; }
+    .finding-mark { display: grid; flex: 0 0 22px; width: 22px; height: 22px; place-items: center; border-radius: 50%; color: white; background: var(--warn); font-size: 12px; font-weight: 850; }
+    .finding.good .finding-mark { background: var(--pass); }
+    .finding b { display: block; font-size: 13px; }
+    .finding small { color: var(--muted); font-size: 12px; }
+    .case-list { display: grid; gap: 9px; }
+    .case { overflow: hidden; border: 1px solid var(--line); border-radius: 11px; background: #fff; }
+    .case summary { display: grid; grid-template-columns: 115px 1fr 120px; gap: 10px; align-items: center; padding: 13px 15px; cursor: pointer; list-style: none; }
+    .case summary::-webkit-details-marker { display: none; }
+    .case-id { font-weight: 850; }
+    .case-title { font-weight: 700; }
+    .status { display: inline-flex; justify-content: center; padding: 4px 9px; border-radius: 999px; font-size: 10px; font-weight: 850; letter-spacing: .025em; white-space: nowrap; }
+    .status.pass { color: #087244; background: #e3f5eb; }
+    .status.fail { color: #a7332a; background: #fde5e2; }
+    .status.blocked { color: #59636b; background: #e9edef; }
+    .status.not-run { color: #80682b; background: #f5f0e2; }
+    .case-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; padding: 4px 15px 16px; border-top: 1px solid var(--line); }
+    .case-field { padding-top: 12px; }
+    .case-field.full { grid-column: 1 / -1; }
+    .case-field h3 { margin: 0 0 4px; color: var(--muted); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
+    .case-field p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .evidence-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .evidence-list a { padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; color: var(--brand); background: #f9fcfa; font-size: 11px; font-weight: 750; text-decoration: none; }
+    .evidence-list a:hover { border-color: var(--brand); }
+    .evidence-image { margin: 10px 0 0; }
+    .evidence-image img { display: block; width: min(100%, 360px); height: auto; border: 1px solid var(--line); border-radius: 10px; }
+    .evidence-image figcaption { margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .limits { padding: 14px 16px; border-left: 4px solid var(--warn); border-radius: 0 9px 9px 0; color: var(--muted); background: #fff9ec; }
+    .limits p { margin: 0; }
+    .footer { display: flex; justify-content: space-between; gap: 15px; align-items: center; padding: 17px 30px; color: var(--muted); background: #f4f8f6; font-size: 11px; }
+    button { padding: 8px 11px; border: 0; border-radius: 8px; color: white; background: var(--brand); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
+    @media (max-width: 760px) {
+      .page { padding: 0; }
+      .report { border-right: 0; border-left: 0; border-radius: 0; }
+      .hero, .section { padding-right: 20px; padding-left: 20px; }
+      .hero-grid, .finding-list { grid-template-columns: 1fr; }
+      .outcome { width: 138px; height: 138px; margin: 0; }
+      .meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .summary { grid-template-columns: repeat(3, 1fr); }
+      .metric { border-bottom: 1px solid var(--line); }
+      .case summary { grid-template-columns: 85px 1fr; }
+      .case summary .status { grid-column: 2; justify-self: start; }
+      .case-body { grid-template-columns: 1fr; }
+      .case-field.full { grid-column: auto; }
+      .footer { align-items: flex-start; flex-direction: column; padding: 17px 20px; }
+    }
+    @media print {
+      @page { margin: 10mm; }
+      body { background: white; }
+      .page { max-width: none; padding: 0; }
+      .report { border: 0; border-radius: 0; box-shadow: none; }
+      .nav, button { display: none; }
+      .case { break-inside: avoid; }
+      .case-body { display: grid !important; }
+      details:not([open]) > .case-body { display: grid !important; }
+      .section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="report">
+      <nav class="nav" aria-label="Mục lục báo cáo">
+        <a href="#overview">Tổng quan</a>
+        <a href="#findings">Phát hiện</a>
+        <a href="#cases">Kết quả từng case</a>
+        <a href="#limits">Giới hạn</a>
+      </nav>
+
+      <header class="hero" id="overview">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Báo cáo kiểm thử</p>
+            <h1>Thông báo 2.2.0 — kiểm thử các bổ sung</h1>
+            <p class="lead">Đã chạy xong phần local: 4/4 case PASS. Ba case giao nhận push trên Android BLOCKED vì chưa xác minh được nguồn gửi mới tạo đồng thời push FCM và bản ghi hộp thư có thể đối chiếu.</p>
+            
+          </div>
+          <div class="outcome" aria-label="Kết luận tổng thể">
+            <div><span>Kết luận</span><strong>CHƯA HOÀN TẤT</strong></div>
+          </div>
+        </div>
+        <div class="meta-grid">
+          <div class="meta"><span>Mã lượt chạy</span><b>20261105-notification-additions-01</b></div>
+          <div class="meta"><span>Ngày / múi giờ</span><b>2026-11-05 12:06–12:33 +0700</b></div>
+          <div class="meta"><span>Ứng dụng / build</span><b>com.lumi.thing · 2.2.0 · build 24 (đã cài; không cài lại)</b></div>
+          <div class="meta"><span>Mã nguồn</span><b>feat/new_ble · working tree có thay đổi local; harness test đã sửa lỗi serialize action</b></div>
+          <div class="meta"><span>Môi trường</span><b>Local Flutter/Python + Postman simulation; production chỉ preflight hộp thư dạng đọc</b></div>
+          <div class="meta"><span>Nền tảng / thiết bị</span><b>Android · Samsung SM_G991B · Android 15/API 35</b></div>
+          <div class="meta"><span>Công cụ</span><b>Flutter 3.38.4 / Dart 3.10.3 · Python 3.9.6 · Postman CLI 1.74.0 · Lumi Tester</b></div>
+          <div class="meta"><span>Thời lượng</span><b>Khoảng 27 phút · không đo hiệu năng</b></div>
+        </div>
+      </header>
+
+      <section class="summary" aria-label="Tổng hợp kết quả">
+        <div class="metric"><span>Tổng case</span><strong>7</strong></div>
+        <div class="metric pass"><span>Pass</span><strong>4</strong></div>
+        <div class="metric fail"><span>Fail</span><strong>0</strong></div>
+        <div class="metric blocked"><span>Blocked</span><strong>3</strong></div>
+        <div class="metric not-run"><span>Not run</span><strong>0</strong></div>
+      </section>
+
+      <section class="section" id="findings">
+        <div class="section-head"><span class="section-number">1</span><div><h2>Phát hiện chính</h2><p class="section-intro">Không có case FAIL. Phần giao nhận FCM thật chưa chạy được; các flow Android mới chỉ được kiểm tra cấu trúc YAML.</p></div></div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-mark">!</span><div><b>NDEV-01/02/03 chưa có fixture push mới để chạy</b><small>Inbox production hiện tải được và quyền thông báo đã cấp, nhưng chưa tìm được sender/fixture hợp lệ tạo cả bản ghi inbox lẫn FCM có thể đối chiếu. Không gửi push không tương quan.</small></div></div>
+          <div class="finding good"><span class="finding-mark">✓</span><div><b>4 case local đã PASS; tìm và sửa lỗi ở flow foreground</b><small>HARN-01 13/13, NUI-11 nằm trong 20/20 widget checks, PUSH-ROUTE 5/5, NDEV-13 simulation 1/1. Ba YAML Android validate thành công nhưng chưa chạy trên máy.</small></div></div>
+        </div>
+      </section>
+
+      <section class="section" id="cases">
+        <div class="section-head"><span class="section-number">2</span><div><h2>Kết quả từng case</h2><p class="section-intro">Mở từng case để xem điều kiện, thao tác, kết quả quan sát và bằng chứng.</p></div></div>
+        <div class="case-list">
+          <details class="case" open>
+            <summary><span class="case-id">HARN-01</span><span class="case-title">Python flow builder cho foreground/closed-push</span><span class="status pass">PASS</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Python 3.9.6; test harness và mã sinh flow trong checkout hiện tại.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>`python3 -m unittest discover -s test/tool -p &#x27;test_notification_test_core.py&#x27; -v`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Các flow được sinh đúng cấu trúc, action `openNotifications` là string và dữ liệu serialize được.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>13/13 unittest pass sau khi sửa lỗi action trước đó bị tạo thành Python set.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="logs/python-harness.log">Python unittest log</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">NUI-11</span><span class="case-title">Lời mời được tài khoản khác chấp nhận</span><span class="status pass">PASS</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Flutter widget regression suite; fixture giả lập trạng thái lời mời accepted bởi account khác.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>`fvm flutter test --no-pub test/views/notification/notification_ui_regression_test.dart`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>UI hiển thị trạng thái đã được chấp nhận bởi tài khoản khác.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>File regression chạy 20/20; NUI-11 pass. Đây là widget test, không phải API/backend live.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="logs/flutter-widget.log">Flutter widget log</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">PUSH-ROUTE</span><span class="case-title">Bốn category push điều hướng đến đúng tab</span><span class="status pass">PASS</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Flutter navigation regression cho `home`, `home_invite`, `lumi_news`, `promotion`.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>`fvm flutter test --no-pub test/views/notification/push_navigation_test.dart`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Bốn category mở tab lần lượt 0, 1, 2, 3.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>5/5 test pass; bốn category điều hướng đúng tab.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="logs/push-navigation.log">Push navigation log</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">NDEV-13</span><span class="case-title">Inbox bốn tab retry sau GET 503 mà không duplicate item</span><span class="status pass">PASS</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Local Postman stand-in; Flutter inbox test được cấu hình trỏ vào server mô phỏng cục bộ.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>`python3 tool/test_notifications.py simulation --output build/notification-tests/20261105-notification-additions-01/postman-simulation`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Mỗi tab nhận transient GET 503 rồi retry 200; item cũ vẫn còn và ID không trùng.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>1/1 simulation pass. Event log ghi nhận retry 503→200 ở cả home, invitation, Lumi và news.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="logs/postman-simulation.jsonl">Simulation event log</a><a href="logs/postman-simulation-summary.json">Simulation summary</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">NDEV-01</span><span class="case-title">Nhận push khi app đang foreground</span><span class="status blocked">BLOCKED</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Android Samsung SM_G991B, Android 15/API 35; app 2.2.0 (24), account A đang đăng nhập production và notification permission đã cấp. Chưa xác minh được nguồn tạo fixture push mới có liên kết với inbox row.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>Không thực thi case trên thiết bị. Flow tương ứng được kiểm tra bằng `lumi-tester validate`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Quan sát push mới phù hợp với trạng thái vòng đời app và đối chiếu được với item mới trong inbox.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>Chưa chạy E2E vì chưa có sender/fixture được xác minh để tạo đồng thời inbox row và FCM push. Flow YAML validate PASS; đây không phải kết quả giao nhận trên thiết bị.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="evidence/android-preflight.json">Android preflight</a><a href="logs/flow-foreground-validate.log">Flow YAML validation log</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">NDEV-02</span><span class="case-title">Nhận push khi app ở background</span><span class="status blocked">BLOCKED</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Android Samsung SM_G991B, Android 15/API 35; app 2.2.0 (24), account A đang đăng nhập production và notification permission đã cấp. Chưa xác minh được nguồn tạo fixture push mới có liên kết với inbox row.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>Không thực thi case trên thiết bị. Flow tương ứng được kiểm tra bằng `lumi-tester validate`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Quan sát push mới phù hợp với trạng thái vòng đời app và đối chiếu được với item mới trong inbox.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>Chưa chạy E2E vì chưa có sender/fixture được xác minh để tạo đồng thời inbox row và FCM push. Flow YAML validate PASS; đây không phải kết quả giao nhận trên thiết bị.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="evidence/android-preflight.json">Android preflight</a><a href="logs/flow-push-validate.log">Flow YAML validation log</a></div></div>
+            </div>
+          </details>
+          <details class="case" open>
+            <summary><span class="case-id">NDEV-03</span><span class="case-title">Nhận push khi app đóng bình thường</span><span class="status blocked">BLOCKED</span></summary>
+            <div class="case-body">
+              <div class="case-field"><h3>Điều kiện</h3><p>Android Samsung SM_G991B, Android 15/API 35; app 2.2.0 (24), account A đang đăng nhập production và notification permission đã cấp. Chưa xác minh được nguồn tạo fixture push mới có liên kết với inbox row.</p></div>
+              <div class="case-field"><h3>Thực hiện</h3><p>Không thực thi case trên thiết bị. Flow tương ứng được kiểm tra bằng `lumi-tester validate`.</p></div>
+              <div class="case-field"><h3>Kỳ vọng</h3><p>Quan sát push mới phù hợp với trạng thái vòng đời app và đối chiếu được với item mới trong inbox.</p></div>
+              <div class="case-field"><h3>Quan sát</h3><p>Chưa chạy E2E vì chưa có sender/fixture được xác minh để tạo đồng thời inbox row và FCM push. Flow YAML validate PASS; đây không phải kết quả giao nhận trên thiết bị.</p></div>
+              <div class="case-field full"><h3>Bằng chứng</h3><div class="evidence-list"><a href="evidence/test-results.json">Kết quả tổng hợp</a><a href="evidence/android-preflight.json">Android preflight</a><a href="logs/flow-closed-push-validate.log">Flow YAML validation log</a></div></div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" id="limits">
+        <div class="section-head"><span class="section-number">3</span><div><h2>Giới hạn và khôi phục</h2><p class="section-intro">Simulation cục bộ không chứng minh gateway production hay giao nhận FCM thật. Không mở/read item hoặc chạy read-all; badge unread baseline 4 được giữ nguyên. App đã đúng version nên không cài lại.</p></div></div>
+        <div class="limits"><p><b>Giới hạn bằng chứng:</b> Local Postman stand-in chỉ xác minh hành vi retry của app với mock. YAML validation chỉ xác minh định dạng flow. Chưa xác minh push thật, âm thanh/thông báo trên khay, giao nhận khi offline, hoặc hành vi backend production. Android preflight chỉ chứng minh app mở inbox production được và quyền đã cấp.</p></div>
+        <div class="case-field"><h3>Cleanup / trạng thái còn lại</h3><p>Không thay đổi dữ liệu cũ, không mở item/read-all, không cài lại APK; session production Account A và notification permission vẫn như trước. Badge unread ghi nhận ban đầu là 4. Device E2E còn chờ nguồn push/fixture mới có thể đối chiếu.</p></div>
+      </section>
+
+      <footer class="footer">
+        <span>Tạo từ `test/report.template.html` · artifacts liên kết theo đường dẫn tương đối trong thư mục lượt chạy.</span>
+        <button type="button" onclick="window.print()">In / Xuất PDF</button>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

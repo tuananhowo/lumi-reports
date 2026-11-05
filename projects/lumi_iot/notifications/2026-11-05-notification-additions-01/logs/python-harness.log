@@ -1,0 +1,18 @@
+test_bad_platform_tab_and_input_types_fail_before_execution (test_notification_test_core.RunInputsTest) ... ok
+test_closed_push_flow_does_not_launch_or_force_stop_the_app (test_notification_test_core.RunInputsTest) ... ok
+test_config_is_per_run_and_cli_takes_precedence (test_notification_test_core.RunInputsTest) ... ok
+test_core_flow_uses_current_fixture_and_encodes_notification_id (test_notification_test_core.RunInputsTest) ... ok
+test_credentials_and_unknown_config_keys_are_rejected (test_notification_test_core.RunInputsTest) ... ok
+test_foreground_and_closed_push_reject_ios_until_runtime_flow_exists (test_notification_test_core.RunInputsTest) ... ok
+test_foreground_flow_keeps_selected_inbox_tab_open_for_fresh_notification (test_notification_test_core.RunInputsTest) ... ok
+test_missing_data_is_requested_at_run_time (test_notification_test_core.RunInputsTest) ... ok
+test_push_flow_still_launches_app_before_opening_tray (test_notification_test_core.RunInputsTest) ... ok
+test_real_run_requires_environment_device_and_account (test_notification_test_core.RunInputsTest) ... ok
+test_smoke_uses_cold_deep_link_then_cycles_all_tabs (test_notification_test_core.RunInputsTest) ... ok
+test_unsupported_ios_push_is_not_reported_ready (test_notification_test_core.RunInputsTest) ... ok
+test_validation_needs_platform_but_no_real_device_or_account (test_notification_test_core.RunInputsTest) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK

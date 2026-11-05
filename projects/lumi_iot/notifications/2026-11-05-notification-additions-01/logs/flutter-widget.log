@@ -1,0 +1,22 @@
+00:00 +0: loading lumi_things/test/views/notification/notification_ui_regression_test.dart
+00:00 +0: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +1: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +2: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +3: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +4: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +5: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-01 switches all four tabs and renders their own items
+00:00 +6: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-02 tapping home opens detail and updates read state and badge
+00:00 +7: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-03 legacy item renders read and never submits a read
+00:00 +8: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-04 read-all cancel keeps state; confirmation updates all and badge
+00:00 +9: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-05.0 empty tab shows localized empty state
+00:00 +10: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-05.1 empty tab shows localized empty state
+00:00 +11: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-05.2 empty tab shows localized empty state
+00:01 +12: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-05.3 empty tab shows localized empty state
+00:01 +13: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-06 invalid invitation explains expiry and offers no response
+00:01 +14: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-07 pending invitation offers the response screen
+00:01 +15: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-08 invitation network failure is distinct from expiry
+00:01 +16: lumi_things/test/views/notification/notification_ui_regression_test.dart: invitation action from an old session cannot open accept screen
+00:01 +17: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-09 push destination opens detail from authenticated inbox
+00:01 +18: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-10 ending session clears old notifications and badge
+00:01 +19: lumi_things/test/views/notification/notification_ui_regression_test.dart: NUI-11 invitation accepted by another account is no longer actionable
+00:01 +20: All tests passed!

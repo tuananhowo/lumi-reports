@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-11-05T12:18:00+07:00",
+  "device": {
+    "serial": "[REDACTED]",
+    "model": "SM_G991B",
+    "online": true,
+    "android_release": "15",
+    "android_sdk": 35
+  },
+  "app": {
+    "package": "com.lumi.thing",
+    "version_name": "2.2.0",
+    "version_code": 24,
+    "matches_repository_version": true,
+    "reinstall_needed": false,
+    "environment": "production",
+    "session": "authenticated account A; profile/logout UI observed"
+  },
+  "notification_permission": {
+    "post_notifications_granted": true,
+    "post_notification_appop": "default allow"
+  },
+  "inbox": {
+    "authenticated_production_list_loaded": true,
+    "unread_badge_baseline": 4,
+    "existing_items_opened_or_read": false
+  },
+  "automation": {
+    "lumi_tester_doctor": "READY",
+    "notification_runner_preflight": "READY"
+  },
+  "secrets_saved": false,
+  "limitations": [
+    "FCM token/channel delivery and authenticated push-to-inbox correlation not yet verified",
+    "Postman simulation run support not yet verified"
+  ]
+}
